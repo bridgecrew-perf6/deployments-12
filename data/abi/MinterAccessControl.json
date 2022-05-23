@@ -1,0 +1,11 @@
+[
+  "event Initialized(uint8)",
+  "event MinterStatusChanged(address indexed,bool indexed)",
+  "event OwnershipTransferred(address indexed,address indexed)",
+  "function addMinter(address)",
+  "function isMinter(address) view returns (bool)",
+  "function owner() view returns (address)",
+  "function removeMinter(address)",
+  "function renounceOwnership()",
+  "function transferOwnership(address)"
+]

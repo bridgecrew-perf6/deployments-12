@@ -1,0 +1,6 @@
+[
+  "event Initialized(uint8)",
+  "event RoyaltiesSet(uint256,tuple(address,uint96)[])",
+  "function getAKXV2Royalties(uint256) view returns (tuple(address,uint96)[])",
+  "function supportsInterface(bytes4) view returns (bool)"
+]

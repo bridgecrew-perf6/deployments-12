@@ -1,0 +1,5 @@
+[
+  "event RoyaltiesSet(uint256,tuple(address,uint96)[])",
+  "function getAKXV2Royalties(uint256) view returns (tuple(address,uint96)[])",
+  "function royaltyInfo(uint256,uint256) view returns (address, uint256)"
+]

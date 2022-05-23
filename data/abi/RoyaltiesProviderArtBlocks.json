@@ -1,0 +1,10 @@
+[
+  "event ArtblocksPercentageChanged(address,uint96,uint96)",
+  "event OwnershipTransferred(address indexed,address indexed)",
+  "function artblocksPercentage() view returns (uint96)",
+  "function getRoyalties(address,uint256) view returns (tuple(address,uint96)[])",
+  "function owner() view returns (address)",
+  "function renounceOwnership()",
+  "function setArtblocksPercentage(uint96)",
+  "function transferOwnership(address)"
+]

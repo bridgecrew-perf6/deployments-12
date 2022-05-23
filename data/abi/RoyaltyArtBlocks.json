@@ -1,0 +1,3 @@
+[
+  "function getRoyaltyData(uint256) view returns (address, address, uint256, uint256)"
+]

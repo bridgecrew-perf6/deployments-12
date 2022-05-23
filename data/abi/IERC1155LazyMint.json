@@ -1,0 +1,17 @@
+[
+  "event ApprovalForAll(address indexed,address indexed,bool)",
+  "event Creators(uint256,tuple(address,uint96)[])",
+  "event Supply(uint256,uint256)",
+  "event TransferBatch(address indexed,address indexed,address indexed,uint256[],uint256[])",
+  "event TransferSingle(address indexed,address indexed,address indexed,uint256,uint256)",
+  "event URI(string,uint256 indexed)",
+  "function balanceOf(address,uint256) view returns (uint256)",
+  "function balanceOfBatch(address[],uint256[]) view returns (uint256[])",
+  "function isApprovedForAll(address,address) view returns (bool)",
+  "function mintAndTransfer(tuple(uint256,string,uint256,tuple(address,uint96)[],tuple(address,uint96)[],bytes[]),address,uint256)",
+  "function safeBatchTransferFrom(address,address,uint256[],uint256[],bytes)",
+  "function safeTransferFrom(address,address,uint256,uint256,bytes)",
+  "function setApprovalForAll(address,bool)",
+  "function supportsInterface(bytes4) view returns (bool)",
+  "function transferFromOrMint(tuple(uint256,string,uint256,tuple(address,uint96)[],tuple(address,uint96)[],bytes[]),address,address,uint256)"
+]

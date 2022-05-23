@@ -10,8 +10,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@akxlab/base": "^1.0.0",
-    "@akxlab/interfaces": "^1.0.0",
+    "@akxlab/base": "^1.0.6",
+    "@akxlab/interfaces": "^1.0.1",
     "@akxlab/libraries": "^1.0.0",
     "@akxlab/tokens": "^1.0.1",
     "@nomiclabs/hardhat-ethers": "^2.0.6",

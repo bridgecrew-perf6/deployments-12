@@ -1,0 +1,14 @@
+[
+  "constructor(address,address,address)",
+  "event Create1155AKXProxy(address)",
+  "event Create1155AKXUserProxy(address)",
+  "event OwnershipTransferred(address indexed,address indexed)",
+  "function beacon() view returns (address)",
+  "function createToken(string,string,string,string,address[],uint256)",
+  "function createToken(string,string,string,string,uint256)",
+  "function getAddress(string,string,string,string,address[],uint256) view returns (address)",
+  "function getAddress(string,string,string,string,uint256) view returns (address)",
+  "function owner() view returns (address)",
+  "function renounceOwnership()",
+  "function transferOwnership(address)"
+]

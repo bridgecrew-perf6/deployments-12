@@ -1,0 +1,4 @@
+[
+  "function ERC1155_LAZY_ASSET_CLASS() view returns (bytes4)",
+  "function MINT_AND_TRANSFER_TYPEHASH() view returns (bytes32)"
+]

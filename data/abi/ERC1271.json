@@ -1,0 +1,6 @@
+[
+  "function ERC1271_INTERFACE_ID() view returns (bytes4)",
+  "function ERC1271_RETURN_INVALID_SIGNATURE() view returns (bytes4)",
+  "function ERC1271_RETURN_VALID_SIGNATURE() view returns (bytes4)",
+  "function isValidSignature(bytes32,bytes) view returns (bytes4)"
+]
