@@ -1,0 +1,7 @@
+[
+  "function callTransfer(address,uint256)",
+  "function myPaymentsBalance(address) view returns (uint256)",
+  "function payments(address) view returns (uint256)",
+  "function withdrawMyPayments(address)",
+  "function withdrawPayments(address)"
+]

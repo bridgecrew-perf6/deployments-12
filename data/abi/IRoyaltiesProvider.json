@@ -1,0 +1,3 @@
+[
+  "function getRoyalties(address,uint256) returns (tuple(address,uint96)[])"
+]

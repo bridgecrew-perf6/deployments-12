@@ -1,0 +1,20 @@
+[
+  "event Initialized(uint8)",
+  "event OwnershipTransferred(address indexed,address indexed)",
+  "event RoyaltiesSetForContract(address indexed,tuple(address,uint96)[])",
+  "event RoyaltiesSetForToken(address indexed,uint256 indexed,tuple(address,uint96)[])",
+  "function __RoyaltiesRegistry_init()",
+  "function clearRoyaltiesType(address)",
+  "function forceSetRoyaltiesType(address,uint256)",
+  "function getProvider(address) view returns (address)",
+  "function getRoyalties(address,uint256) returns (tuple(address,uint96)[])",
+  "function getRoyaltiesType(address) view returns (uint256)",
+  "function owner() view returns (address)",
+  "function renounceOwnership()",
+  "function royaltiesByToken(address) view returns (bool)",
+  "function royaltiesByTokenAndTokenId(bytes32) view returns (bool)",
+  "function royaltiesProviders(address) view returns (uint256)",
+  "function setProviderByToken(address,address)",
+  "function setRoyaltiesByToken(address,tuple(address,uint96)[])",
+  "function transferOwnership(address)"
+]

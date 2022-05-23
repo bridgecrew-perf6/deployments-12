@@ -1,0 +1,191 @@
+{
+  "manifestVersion": "3.2",
+  "admin": {
+    "address": "0xE33121BfA1D2eB65Ab5D7453bA0c02bA81eAddf9",
+    "txHash": "0x2f29200964dee0c3a47cd6c21cc5a41688f5ab00a647d35dbafba64c5fecebb2"
+  },
+  "proxies": [
+    {
+      "address": "0xFd0944235509529fac5509FAc5F33AD8D1d6Dd98",
+      "txHash": "0xca73bf1681595f7c64e6f6ae2ec63c218ba1a54ed64bdba28cfb742533ff94e4",
+      "kind": "transparent"
+    }
+  ],
+  "impls": {
+    "df2cb374d82ee43d67dfd66097a49db64a05556c8ddb840b303c7c4ea06f2226": {
+      "address": "0x3CCea22dD0179ae49097Fd42D85c6e15462934C4",
+      "txHash": "0x84627bcb56ff64d4e2cc9a1d2c60b9404efa3d4a26b2b178bfcf675520aa7cc2",
+      "layout": {
+        "storage": [
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint8",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:62",
+            "retypedFrom": "bool"
+          },
+          {
+            "label": "_initializing",
+            "offset": 1,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:67"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "ContextUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/utils/ContextUpgradeable.sol:36"
+          },
+          {
+            "label": "_owner",
+            "offset": 0,
+            "slot": "51",
+            "type": "t_address",
+            "contract": "OwnableUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:22"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "52",
+            "type": "t_array(t_uint256)49_storage",
+            "contract": "OwnableUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:87"
+          },
+          {
+            "label": "royaltiesByTokenAndTokenId",
+            "offset": 0,
+            "slot": "101",
+            "type": "t_mapping(t_bytes32,t_struct(RoyaltiesSet)258_storage)",
+            "contract": "RoyaltiesRegistry",
+            "src": "@akxlab/base/RoyaltiesRegistry/RoyaltiesRegistry.sol:31"
+          },
+          {
+            "label": "royaltiesByToken",
+            "offset": 0,
+            "slot": "102",
+            "type": "t_mapping(t_address,t_struct(RoyaltiesSet)258_storage)",
+            "contract": "RoyaltiesRegistry",
+            "src": "@akxlab/base/RoyaltiesRegistry/RoyaltiesRegistry.sol:33"
+          },
+          {
+            "label": "royaltiesProviders",
+            "offset": 0,
+            "slot": "103",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "RoyaltiesRegistry",
+            "src": "@akxlab/base/RoyaltiesRegistry/RoyaltiesRegistry.sol:35"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "104",
+            "type": "t_array(t_uint256)46_storage",
+            "contract": "RoyaltiesRegistry",
+            "src": "@akxlab/base/RoyaltiesRegistry/RoyaltiesRegistry.sol:252"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_address_payable": {
+            "label": "address payable",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_struct(Part)44_storage)dyn_storage": {
+            "label": "struct LibPart.Part[]",
+            "numberOfBytes": "32"
+          },
+          "t_array(t_uint256)46_storage": {
+            "label": "uint256[46]",
+            "numberOfBytes": "1472"
+          },
+          "t_array(t_uint256)49_storage": {
+            "label": "uint256[49]",
+            "numberOfBytes": "1568"
+          },
+          "t_array(t_uint256)50_storage": {
+            "label": "uint256[50]",
+            "numberOfBytes": "1600"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_bytes32": {
+            "label": "bytes32",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_struct(RoyaltiesSet)258_storage)": {
+            "label": "mapping(address => struct RoyaltiesRegistry.RoyaltiesSet)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_bytes32,t_struct(RoyaltiesSet)258_storage)": {
+            "label": "mapping(bytes32 => struct RoyaltiesRegistry.RoyaltiesSet)",
+            "numberOfBytes": "32"
+          },
+          "t_struct(Part)44_storage": {
+            "label": "struct LibPart.Part",
+            "members": [
+              {
+                "label": "account",
+                "type": "t_address_payable",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "value",
+                "type": "t_uint96",
+                "offset": 20,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(RoyaltiesSet)258_storage": {
+            "label": "struct RoyaltiesRegistry.RoyaltiesSet",
+            "members": [
+              {
+                "label": "initialized",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "royalties",
+                "type": "t_array(t_struct(Part)44_storage)dyn_storage",
+                "offset": 0,
+                "slot": "1"
+              }
+            ],
+            "numberOfBytes": "64"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          },
+          "t_uint96": {
+            "label": "uint96",
+            "numberOfBytes": "12"
+          }
+        }
+      }
+    }
+  }
+}
