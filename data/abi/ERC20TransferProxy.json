@@ -1,0 +1,12 @@
+[
+  "event Initialized(uint8)",
+  "event OwnershipTransferred(address indexed,address indexed)",
+  "function __ERC20TransferProxy_init()",
+  "function __OperatorRole_init()",
+  "function addOperator(address)",
+  "function erc20safeTransferFrom(address,address,address,uint256)",
+  "function owner() view returns (address)",
+  "function removeOperator(address)",
+  "function renounceOwnership()",
+  "function transferOwnership(address)"
+]

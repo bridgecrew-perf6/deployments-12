@@ -1,0 +1,11 @@
+[
+  "event Initialized(uint8)",
+  "event OwnershipTransferred(address indexed,address indexed)",
+  "function __OperatorRole_init()",
+  "function addOperator(address)",
+  "function owner() view returns (address)",
+  "function removeOperator(address)",
+  "function renounceOwnership()",
+  "function transfer(tuple(tuple(bytes4,bytes),uint256),address,address)",
+  "function transferOwnership(address)"
+]

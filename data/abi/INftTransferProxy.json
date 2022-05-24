@@ -1,0 +1,4 @@
+[
+  "function erc1155safeTransferFrom(address,address,address,uint256,uint256,bytes)",
+  "function erc721safeTransferFrom(address,address,address,uint256)"
+]

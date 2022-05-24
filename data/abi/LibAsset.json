@@ -1,0 +1,16 @@
+[
+  "function ASSET_CLASS_AKXC() view returns (bytes4)",
+  "function ASSET_CLASS_AKXF() view returns (bytes4)",
+  "function ASSET_CLASS_AKXS() view returns (bytes4)",
+  "function ASSET_CLASS_COLLECTION() view returns (bytes4)",
+  "function ASSET_CLASS_ERC1155() view returns (bytes4)",
+  "function ASSET_CLASS_ERC20() view returns (bytes4)",
+  "function ASSET_CLASS_ERC721() view returns (bytes4)",
+  "function ASSET_CLASS_ERC721S() view returns (bytes4)",
+  "function ASSET_CLASS_ETH() view returns (bytes4)",
+  "function ASSET_CLASS_IMAGE() view returns (bytes4)",
+  "function ASSET_CLASS_MATIC() view returns (bytes4)",
+  "function ASSET_CLASS_ORACLE() view returns (bytes4)",
+  "function ASSET_CLASS_PROFILE() view returns (bytes4)",
+  "function ASSET_CLASS_VIDEO() view returns (bytes4)"
+]

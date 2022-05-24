@@ -46,9 +46,9 @@ const config: HardhatUserConfig = {
       // @ts-ignore
       accounts: [process.env.PRIVATE_KEY],
       timeout: 200000,
-      gasPrice: "auto",
       from: "0xc956BbcA545e0071Edcd14AE0531F7fa94D33771",
       gas: "auto",
+      nonce: 1000,
     },
     ropsten: {
       url: process.env.ROPSTEN_URL || "",
@@ -57,7 +57,7 @@ const config: HardhatUserConfig = {
     },
   },
   gasReporter: {
-    enabled: process.env.REPORT_GAS !== undefined,
+    enabled: true,
     currency: "USD",
   },
   etherscan: {
