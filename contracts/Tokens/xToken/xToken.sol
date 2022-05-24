@@ -14,29 +14,30 @@ contract xToken is Initializable, XTokenInterface,  IxToken,  XTokenStorage, Exp
     address public beacon;
     address public escrow;
 
-    constructor(address _beacon, InterestRateModelInterface interestRateModel_, uint256 initialExchangeRate, string memory name_, string memory symbol_,
+    constructor(address _beacon, address _escrow, InterestRateModelInterface interestRateModel_, uint256 initialExchangeRate, string memory name_, string memory symbol_,
     uint8 decimals_) {
-        initialize(_beacon, interestRateModel_ ,initialExchangeRate, name_, symbol_ ,decimals_);
+        initialize(_beacon, _escrow, interestRateModel_ ,initialExchangeRate, name_, symbol_ ,decimals_);
     }
 
-    function initialize(address _beacon, InterestRateModelInterface interestRateModel_, uint256 initialExchangeRate, string memory name_, string memory symbol_,
+    function initialize(address _beacon, address _escrow, InterestRateModelInterface interestRateModel_, uint256 initialExchangeRate, string memory name_, string memory symbol_,
     uint8 decimals_) public initializer {
         require(msg.sender == admin, "only admin");
  
         require(accrualBlockNumber == 0 && borrowIndex == 0, "market already initialized");
+        __XToken_init(_beacon, _escrow, interestRateModel_ ,initialExchangeRate, name_, symbol_ ,decimals_);
 
     }
 
-    function __xToken_init(address _beacon, address _escrow, InterestRateModelInterface interestRateModel_, uint256 initialExchangeRate, string memory name_, string memory symbol_,
+    function __XToken_init(address _beacon, address _escrow, InterestRateModelInterface interestRateModel_, uint256 initialExchangeRate, string memory name_, string memory symbol_,
     uint8 decimals_) internal initializer {
         beacon = _beacon;
         escrow = _escrow;
         _set_interest_rate_model(interestRateModel_);
         _set_initial_exchange_rate(initialExchangeRate);
+        _set_initial_escrow();
         _name = name_;
         _symbol = symbol_;
         _decimals = decimals_;
-
 
     }
 
@@ -106,20 +107,20 @@ contract xToken is Initializable, XTokenInterface,  IxToken,  XTokenStorage, Exp
 
     }
 
-      function transfer(address dst, uint256 amount) public nonReentrant returns(bool) {
+      function transfer(address dst, uint256 amount) public nonReentrant  {
           transferTokens(msg.sender, msg.sender, dst, amount);
       }
 
-      function transferFrom(address src, address dst, uint256 amount) public nonReentrant returns(bool) {
+      function transferFrom(address src, address dst, uint256 amount) public nonReentrant {
            transferTokens(msg.sender, src, dst, amount);
       }
 
    
-    function transferAllowed(address spender) public returns(bool) {
+    function transferAllowed(address spender) public view  returns(bool) {
         return conditionalEscrow.withdrawalAllowed(spender);
     }
 
-    function approve(address spender, uint256 amount) public returns(bool) {
+    function approve(address spender, uint256 amount) public  {
          address src = msg.sender;
         _transferAllowances[src][spender] = amount;
         emit Approval(src, spender, amount);
@@ -381,7 +382,7 @@ contract xToken is Initializable, XTokenInterface,  IxToken,  XTokenStorage, Exp
      */
     function mintFresh(address minter, uint256 mintAmount) internal returns (uint256, uint256) {
         /* Fail if mint not allowed */
-        bool allowed = mintAllowed();
+        bool allowed = true;
        
        
 
@@ -503,7 +504,7 @@ contract xToken is Initializable, XTokenInterface,  IxToken,  XTokenStorage, Exp
         }
 
         /* Fail if redeem not allowed */
-        bool allowed = redeemAllowed();
+        bool allowed = true;
       
 
 
@@ -568,7 +569,7 @@ contract xToken is Initializable, XTokenInterface,  IxToken,  XTokenStorage, Exp
       */
     function borrowFresh(address borrower, uint256 borrowAmount) internal returns (uint256) {
         /* Fail if borrow not allowed */
-        bool allowed = borrowAllowed();
+        bool allowed = true;
       
         /* Verify market's block number equals current block number */
      
@@ -660,7 +661,7 @@ contract xToken is Initializable, XTokenInterface,  IxToken,  XTokenStorage, Exp
      */
     function repayBorrowFresh(address payer, address borrower, uint256 repayAmount) internal returns (uint256, uint256) {
         /* Fail if repayBorrow not allowed */
-       bool allowed = repayBorrowAllowed();
+       bool allowed = true;
       
 
         RepayBorrowLocalVars memory vars;
@@ -930,7 +931,7 @@ contract xToken is Initializable, XTokenInterface,  IxToken,  XTokenStorage, Exp
       * @dev Admin function to set a new controller
       * @return uint 0=success, otherwise a failure (see ErrorReporter.sol for details)
       */
-    function _setcontroller(ControllerInterface newController) public returns (uint256) {
+    function _setcontroller(ControllerInterface newController) public pure returns (uint256) {
         // Check caller is admin
        // if (msg.sender != admin) {
        //     return fail(Error.UNAUTHORIZED, FailureInfo.SET_controller_OWNER_CHECK);
@@ -955,7 +956,7 @@ contract xToken is Initializable, XTokenInterface,  IxToken,  XTokenStorage, Exp
       * @return uint 0=success, otherwise a failure (see ErrorReporter.sol for details)
       */
     function _setReserveFactor(uint newReserveFactor) public nonReentrant returns (uint) {
-        uint error = accrueInterest();
+        //uint error = accrueInterest();
         
         return _setReserveFactorFresh(newReserveFactor);
     }
@@ -968,7 +969,7 @@ contract xToken is Initializable, XTokenInterface,  IxToken,  XTokenStorage, Exp
     function _setReserveFactorFresh(uint newReserveFactor) internal returns (uint) {
        
         // Verify market's block number equals current block number
-        require(accrualBlockNumber == block.number);
+        require(accrualBlockNumber == block.number, "");
 
         // Check newReserveFactor ≤ maxReserveFactor
         require(newReserveFactor <= _reserveFactorMax, "");
@@ -1162,20 +1163,19 @@ contract xToken is Initializable, XTokenInterface,  IxToken,  XTokenStorage, Exp
     }
 
 
-    function mintAllowed() internal returns (bool) {
-        return true;
+    function mintAllowed() internal  {
+       
     }
 
-    function redeemAllowed() internal returns (bool) {
-        return true;
+    function redeemAllowed() internal  {
     }
 
-   function borrowAllowed() internal returns (bool) {
-        return true;
+   function borrowAllowed() internal  {
+       
     }
 
-      function repayBorrowAllowed() internal returns (bool) {
-        return true;
+      function repayBorrowAllowed() internal  {
+        
     }
 
 
